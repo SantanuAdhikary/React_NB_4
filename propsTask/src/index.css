@@ -1,0 +1,120 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav{
+  height: 80px;
+  background-color: antiquewhite;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 5px;
+
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.5);
+}
+
+.nav > .logo > h2{
+  letter-spacing: 1.5px;
+  font-size: 20px;
+}
+
+span{
+  color:orangered;
+  font-size:40px ;
+}
+.right > ul{
+  display: flex;
+  list-style: none;
+}
+
+.right > ul > li{
+  font-size: 25px;
+  font-weight: bold;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+
+  &:hover{
+    color: orangered;
+    text-decoration: underline;
+    text-decoration-color: orangered;
+
+  }
+}
+
+
+.section1{
+  height: 250px;
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:10px;
+}
+
+.section1 > h1{
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  font-size: 40px;
+  text-shadow: 0px 6px 4px rgba(0,0,0,0.5);
+}
+.section1 > p{
+  font-size: 26px;
+  font-weight: bold;
+  color: orangered;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+
+}
+.section2{
+  height: 400px;
+  background-color: burlywood;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.section2 > .box{
+  height: 300px;
+  width: 350px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+  background-color: white;
+  text-align: center;
+
+  &:hover{
+    transform: translate(-10px,-10px);
+  }
+
+}
+
+.section2 > .box > img{
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.section2 > .box >h2{
+  margin-bottom: 5px;
+}
+
+.footer{
+  height: 80px;
+  background-color: black;
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer > p{
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+}
