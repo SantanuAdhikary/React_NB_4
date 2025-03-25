@@ -12,8 +12,9 @@
   justify-content: space-around;
   align-items: center;
   margin-bottom: 5px;
-
   box-shadow: 0px 3px 6px rgba(0,0,0,0.5);
+  border-bottom-left-radius : 20px;
+  border-bottom-right-radius:20px;
 }
 
 .nav > .logo > h2{
@@ -35,14 +36,26 @@ span{
   font-weight: bold;
   margin-right: 10px;
   cursor: pointer;
-  transition: all 0.2s ease-in;
+  transition: all 0.3s ease-in;
+  position: relative;
 
   &:hover{
     color: orangered;
-    text-decoration: underline;
-    text-decoration-color: orangered;
-
   }
+}
+.right > ul > li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%; 
+  height: 2px;
+  background-color: orangered;
+  transition: width 0.4s ease-in-out;
+}
+
+.right > ul > li:hover::after {
+  width: 100%; 
 }
 
 
@@ -54,6 +67,9 @@ span{
   justify-content: center;
   align-items: center;
   gap:10px;
+  border-radius: 20px;
+  margin-bottom: 3px;
+  box-shadow: 0px 3px 6px rgba(255,255,255,0.5);
 }
 
 .section1 > h1{
@@ -75,6 +91,9 @@ span{
   display: flex;
   justify-content: space-around;
   align-items: center;
+  border-radius: 20px;
+  margin-bottom: 3px;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.5);
 }
 
 .section2 > .box{
@@ -111,10 +130,16 @@ span{
   display: flex;
   justify-content: center;
   align-items: center;
+  border-top-left-radius : 20px;
+  border-top-right-radius:20px;
 }
 
 .footer > p{
   font-size: 20px;
   font-weight: bold;
   font-style: italic;
+}
+
+.main{
+  padding-inline: 30px;
 }

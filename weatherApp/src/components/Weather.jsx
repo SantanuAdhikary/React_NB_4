@@ -1,45 +1,55 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from "react";
 
 const Weather = () => {
+  let [search, setSearch] = useState("chennai");
 
-   let [search, setSearch] = useState(null)
+  let [city, setCity] = useState(null);
 
-   let [citydata , setCitydata] = useState(null);
+  let getData = async () => {
+    let res = await fetch(
+      ` https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid=ef5b95d8355e3f0dba83ba065f29f15a`
+    );
 
-   let getData = async()=>{
 
-    let res = await fetch(` https://api.openweathermap.org/data/2.5/weather?q=${search}&units=metric&appid={}`)
+    let data = await res.json();
 
-    let data = await res.json()
     // console.log(data)
-    setCitydata(data)
-    // console.log(citydata)
-   }
 
-    useEffect(()=>{
-        getData()
-    },[citydata])
+    setCity(data.main);
+
+    console.log(city);
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
   return (
-    <div className='inner'>
+    <div className="inner">
+      <div className="box">
+        <input
+          type="text"
+          placeholder="enter city"
+          onChange={(e) => setSearch(e.target.value)}
+        />
+        <button onClick={getData}>search</button>
+      </div>
 
-        <div className="box">
-            <input type="text" placeholder='enter city' onChange={(e)=> setSearch(e.target.value)} />
-            <button onClick={getData}>search</button>
-        </div>
-
-         {
-             !citydata ?
-            (<p> data not found</p>) : 
-            (<div className="info">
-            <h2>{search}</h2>
-            <h1>{citydata.main.temp}&deg; C</h1>
-            <p>Min: {citydata.main.temp_min}&deg; C | Max: {citydata.main.temp_max}&deg; C</p>
-            
-         </div> )
-         }
-
+      <div className="info">
+        {!city ? (
+          <p> data is not found</p>
+        ) : (
+          <div>
+            <h2> {search}</h2>
+            <h1> {city.temp} &deg; C</h1>
+            <p>
+              Min: {city.temp_min}&deg; C | Max:{city.temp_max}&deg; C
+            </p>
+          </div>
+        )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Weather
+export default Weather;

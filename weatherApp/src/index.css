@@ -14,7 +14,7 @@
 
 .outer > .inner{
   height: 220px;
-  width: 300px;
+  width: 350px;
   background-color: rgb(190, 176, 176);
   border-radius: 20px;
   display: flex;

@@ -5,7 +5,10 @@ import Navbar from "./components/Navbar"
 let App =()=>{
   return(
 
-    <div>
+    <div className="main">
+
+      <div className="inner">
+
          <Navbar/>
 
          <div className="section1">
@@ -25,6 +28,7 @@ let App =()=>{
          </div>
 
          <Footer/>
+      </div>
     </div>
   )
 }
